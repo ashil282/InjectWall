@@ -1,0 +1,67 @@
+COMMAND: python -m unittest discover -s tests -v
+EXIT CODE: 0
+STDOUT:
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+test_benign_text_not_flagged (test_engine.EngineTests.test_benign_text_not_flagged) ... ok
+test_detects_direct_override (test_engine.EngineTests.test_detects_direct_override) ... ok
+test_detects_indirect_secret_request (test_engine.EngineTests.test_detects_indirect_secret_request) ... ok
+test_fixture_schema (test_engine.EngineTests.test_fixture_schema) ... ok
+test_known_quoted_phrase_false_positive_is_documented (test_engine.EngineTests.test_known_quoted_phrase_false_positive_is_documented) ... ok
+test_payload_is_not_executed (test_engine.EngineTests.test_payload_is_not_executed) ... ok
+test_suite_has_expected_results (test_engine.EngineTests.test_suite_has_expected_results) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+
+
+COMMAND: python -m injectwall.cli
+EXIT CODE: 0
+STDOUT:
+InjectWall | local prompt-injection checks
+==============================================
+[PASS] direct-001         direct    expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] direct-002         direct    expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] direct-003         direct    expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] direct-004         direct    expected=not_flagged observed=not_flagged
+       No configured injection pattern matched; content remains untrusted input.
+[PASS] indirect-001       indirect  expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] indirect-002       indirect  expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] indirect-003       indirect  expected=not_flagged observed=not_flagged
+       No configured injection pattern matched; content remains untrusted input.
+[PASS] indirect-004       indirect  expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+[PASS] boundary-001       boundary  expected=blocked     observed=blocked
+       Heuristic matched an instruction-overriding or data-exfiltration pattern.
+----------------------------------------------
+Total: 9  Passed: 9  Failed: 0
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+
